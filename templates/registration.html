@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: rgb(122, 96, 235);
+            text-align: left;
+            padding: 1rem;
+            
+        }
+         .registration {
+            max-width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>registration</title>
+</head>
+<body>
+    <div class="registration">
+    <h2>Create an Account</h2>
+    <p>Fill following details and register</p>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+    <form action="{{ url_for('register') }}" method = "POST">
+        <label>Name <input id="name" type="text" name="name" placeholder="Type here" autocomplete="name" required/></label><br><br>
+        <label>Email <input id="email" type="email" name="email" placeholder="Type here" autocomplete="email" required/></label><br><br>
+        <label>Phone Number<input id="phone" type="tel" name="phone" placeholder="Type here" autocomplete="tel" /></label><br><br>
+        <label>Password <input id="password" type="password" name="password" minlength="8" maxlength="12" placeholder="Create strong password here" autocomplete="new-password" required/></label><br><br>
+        <button type="submit">Register Account</button>
+
+    </form>
+        <p>
+            Already have an Account?
+            <a href="{{ url_for('login') }}">Login here</a>
+        </p>
+    </div>
+</body>
+</html>

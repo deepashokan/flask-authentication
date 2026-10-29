@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </nav>
+    <h1> You are logged in as {{username}}!</h1>
+</body>
+</html>
